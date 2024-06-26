@@ -17,7 +17,7 @@ ref : https://training.github.com/downloads/github-git-cheat-sheet/, https://doc
 
 ## Option 1: Create a new repository on the command line
 
-> touch README.md
+> touch README.md \n
 > git init
 > git add README.md
 > git commit -m "first commit"
