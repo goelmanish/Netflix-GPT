@@ -17,7 +17,7 @@ ref : https://training.github.com/downloads/github-git-cheat-sheet/, https://doc
 
 ## Option 1: Create a new repository on the command line
 
-> touch README.md \n
+> touch README.md
 > git init
 > git add README.md
 > git commit -m "first commit"
@@ -30,3 +30,10 @@ ref : https://training.github.com/downloads/github-git-cheat-sheet/, https://doc
 > git remote add origin https://github.com/goelmanish/Netflix-GPT.git
 > git branch -M main
 > git push -u origin main
+
+
+## Feature list
+- Sign In
+- Sign Up
+
+## Formik library for Form Validation

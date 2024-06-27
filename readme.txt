@@ -11,3 +11,23 @@ Setup Github repository
 ref : https://training.github.com/downloads/github-git-cheat-sheet/, https://docs.github.com/en/get-started
 1. Create a repository in Github
 2. 
+
+Create a new repository on the command line:-
+
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:alexpchin/<reponame>.git
+git push -u origin main
+
+##Push an existing repository from the command line:- 
+
+git remote add origin https://github.com/goelmanish/Netflix-GPT.git
+git branch -M main
+git push -u origin main
+
+
+Setup Routes:
+> npm i -D react-router-dom 
