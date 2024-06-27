@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
-import Header from './Header'
+import React, { useRef, useState } from "react";
+import Header from "./Header";
+import { validateSignIn } from "../utils/validation";
 
 const Login = () => {
-    const [isSignIn,setIsSignIn] = useState(true);
+  const [isSignIn, setIsSignIn] = useState(true);
+const [errorMessage,setErrorMessage]=useState(null);
+  const email = useRef(null);
+  const password = useRef(null);
 
-    const toggleSignInForm = ()=>{
-        setIsSignIn(!isSignIn);
-    }
+  const toggleSignInForm = () => {
+    setIsSignIn(!isSignIn);
+  };
+
+  const handleFormSubmit = () => {
+    let message = validateSignIn(email.current.value,password.current.value);
+    setErrorMessage(message);
+  };
   return (
-    <div>   
+    <div>
       <Header />
       <div className="absolute">
         <img
@@ -16,25 +25,51 @@ const Login = () => {
           alt="background"
         />
       </div>
-      <form className="absolute p-14 bg-black bg-opacity-70 w-3/12 my-40 mx-auto right-0 left-0 rounded-lg text-white">
-        <h1 className="font-bold text-3xl pb-4">{isSignIn ? "Sign In" : "Sign Up"}</h1>
-        { isSignIn ? "" : 
-        <input type="text" placeholder="Full Name" className="py-3 p-2 mt-4  rounded-sm w-full bg-gray-600" />
-        }
-        <input type="text" placeholder="Email Address" className="py-3 p-2 mt-4  rounded-sm w-full bg-gray-600" />
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className="absolute p-14 bg-black bg-opacity-70 w-3/12 my-40 mx-auto right-0 left-0 rounded-lg text-white"
+      >
+        <h1 className="font-bold text-3xl pb-4">
+          {isSignIn ? "Sign In" : "Sign Up"}
+        </h1>
+        {isSignIn ? (
+          ""
+        ) : (
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="py-3 p-2 mt-4  rounded-sm w-full bg-gray-600"
+          />
+        )}
         <input
+          ref={email}
+          type="text"
+          placeholder="Email Address"
+          className="py-3 p-2 mt-4  rounded-sm w-full bg-gray-600"
+        />
+        <input
+          ref={password}
           type="password"
           placeholder="Password"
           className="py-3 p-2 mt-4 rounded-sm w-full bg-gray-600"
         />
-        <button className="p-3 my-6 bg-red-700 w-full rounded-md">{isSignIn ? "Sign In" : "Sign Up"}</button>
-      <p className="mt-6" onClick={toggleSignInForm}>New to NetFlix? <span className="font-bold underline">{isSignIn ? "Sign Up" : "Sign In" }</span></p>
+
+        <p className="text-red-500 py-2 font-xl">{errorMessage}</p>
+        <button
+          className="p-3 my-6 bg-red-700 w-full rounded-md"
+          onClick={handleFormSubmit}
+        >
+          {isSignIn ? "Sign In" : "Sign Up"}
+        </button>
+        <p className="mt-6" onClick={toggleSignInForm}>
+          New to NetFlix?{" "}
+          <span className="font-bold underline">
+            {isSignIn ? "Sign Up" : "Sign In"}
+          </span>
+        </p>
       </form>
-     
     </div>
   );
-}
+};
 
-export default Login
-
-
+export default Login;

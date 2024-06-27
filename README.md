@@ -1,6 +1,12 @@
 # Netflix-GPT
 Netflix GPT App
 
+## Feature list
+- Sign In
+- Sign Up
+- Custom Validation
+- Firebase setup
+
 Setup Project # Netflix GPT 
 > npx create-react-app netflixgpt
 
@@ -31,9 +37,14 @@ ref : https://training.github.com/downloads/github-git-cheat-sheet/, https://doc
 > git branch -M main
 > git push -u origin main
 
-
-## Feature list
-- Sign In
-- Sign Up
+## Setup Routes:
+> npm i -D react-router-dom 
 
 ## Formik library for Form Validation
+
+## Firebase setup
+> npm i firebase
+> npm install -g firebase-tools
+> firebase login
+> firebase init
+> firebase deploy
