@@ -37,6 +37,7 @@ ref : https://training.github.com/downloads/github-git-cheat-sheet/, https://doc
 > git branch -M main
 > git push -u origin main
 
+## https://medium.com/@blessingmba3/introduction-to-react-router-da64380ca778
 ## Setup Routes:
 > npm i -D react-router-dom 
 
@@ -48,3 +49,7 @@ ref : https://training.github.com/downloads/github-git-cheat-sheet/, https://doc
 > firebase login
 > firebase init
 > firebase deploy
+
+## Setup Redux
+> npm i -D @reduxjs/toolkit
+> npm i react-redux
