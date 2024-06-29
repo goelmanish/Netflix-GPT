@@ -6,6 +6,7 @@ Netflix GPT App
 - Sign Up
 - Custom Validation
 - Firebase setup
+- Show youtube video in background
 
 Setup Project # Netflix GPT 
 > npx create-react-app netflixgpt
