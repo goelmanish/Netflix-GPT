@@ -24,12 +24,10 @@ const trailer = useSelector((store)=> store.movies?.trailerVideo);
     <div className="w-screen aspect-video">
       <iframe
         className="w-screen w-[100%] h-[100%] top-0 left-0"
-        src={"https://www.youtube.com/embed/" + trailer?.key +"?autoplay=1&mute=1&autoplay=1"} 
+        src={"https://www.youtube.com/embed/" + trailer?.key +"?autoplay=1&mute=1&loop=1"} 
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
-        frameBorder="0" 
-        allowFullScreen
       ></iframe>
     </div>
   );

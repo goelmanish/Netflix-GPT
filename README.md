@@ -7,6 +7,9 @@ Netflix GPT App
 - Custom Validation
 - Firebase setup
 - Show youtube video in background
+- Show movies cards
+- Hide scroll bar via adding a plugin in tailwind.config.js
+
 
 Setup Project # Netflix GPT 
 > npx create-react-app netflixgpt

@@ -8,11 +8,18 @@ const movies = useSelector((store) => store.movies?.nowPlayingMovies);
 
 if(movies === null) return;
 
-const mainMovie = movies[0];
+function getRandomArbitrary(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); 
+  }
 
+  const indx = getRandomArbitrary(1,movies.length-1); 
+  console.log(indx);
+const mainMovie = movies[indx];
+console.log(mainMovie);
 const { original_title, overview,id } = mainMovie;
 
-console.log(mainMovie);
   return (
     <div>
       <VideoTitle title={original_title} overview={overview} />
