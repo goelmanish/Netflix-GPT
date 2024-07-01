@@ -9,7 +9,7 @@ Netflix GPT App
 - Show youtube video in background
 - Show movies cards
 - Hide scroll bar via adding a plugin in tailwind.config.js
-
+- Make Gpt Search page multilingual
 
 Setup Project # Netflix GPT 
 > npx create-react-app netflixgpt
