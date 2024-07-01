@@ -6,7 +6,7 @@ import VideoBackground from './VideoBackground';
 const MainContainer = () => {
 const movies = useSelector((store) => store.movies?.nowPlayingMovies);
 
-if(movies === null) return;
+if(!movies) return null;
 
 function getRandomArbitrary(min, max) {
     const minCeiled = Math.ceil(min);
@@ -14,8 +14,8 @@ function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); 
   }
 
-  const indx = getRandomArbitrary(1,movies.length-1); 
-  console.log(indx);
+const indx = getRandomArbitrary(1,movies.length-1); 
+console.log(indx);
 const mainMovie = movies[indx];
 console.log(mainMovie);
 const { original_title, overview,id } = mainMovie;
