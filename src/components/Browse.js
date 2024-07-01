@@ -12,8 +12,9 @@ import MovieSearchResult from './MovieSearchResult'
 const Browse = () => {
   const dispatch = useDispatch();
 const showGptSearch = useSelector(store=>store.gpt?.gptSearchState);
+const movies = useSelector((store) => store.movies?.nowPlayingMovies);
   useEffect( () => { 
-    PlayList()
+    !movies && PlayList()
     .then((data)=>{
       //  console.log(data);
         dispatch(nowPlayingMovies(data));

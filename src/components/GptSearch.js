@@ -9,6 +9,7 @@ import MovieSearchResult from './MovieSearchResult';
 const GptSearch = () => {
   const dispatch = useDispatch();
   const currLanguage = useSelector(store => store.app?.language);
+  const { searchMovieDetail, searchMovies } = useSelector((store) => store.gpt);
     const searchText = useRef("");
     const gptQuery = "Act like a movie recomendation system and return only 10 movies name in form of comma separated again query: " + searchText.current.value;
     const handleSearchClick = async ()=>{
@@ -21,10 +22,17 @@ const GptSearch = () => {
       // console.log(searchResult.choices);
 
       const movies = "Don,Hera Pheri,Gadar,Ta ra rum pum,Ghajini".split(",");
-      const moviesPromises = movies.map((movie) => getMovieDetail(movie));
-      const moviesArray = await Promise.all(moviesPromises);
-      console.log(moviesArray);
-      dispatch(addMoviesResult({searchMovieDetails:moviesArray,searchMovies: movies}))
+      if(!searchMovies){
+        const moviesPromises = movies.map((movie) => getMovieDetail(movie));
+        const moviesArray = await Promise.all(moviesPromises);
+        console.log(moviesArray);
+        dispatch(
+          addMoviesResult({
+            searchMovieDetails: moviesArray,
+            searchMovies: movies,
+          })
+        );
+      }
     }
   return (
     <div>

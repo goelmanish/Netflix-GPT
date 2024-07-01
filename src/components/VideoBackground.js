@@ -8,7 +8,7 @@ const dispatch = useDispatch();
 const trailer = useSelector((store)=> store.movies?.trailerVideo);
 
     useEffect( () => { 
-        MovieTrailer(movieId)
+      !trailer && MovieTrailer(movieId)
           .then((data) => {
               const clips = data.filter(
                 (clips) => clips.type === "Trailer"

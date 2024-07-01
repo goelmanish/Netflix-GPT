@@ -15,9 +15,7 @@ function getRandomArbitrary(min, max) {
   }
 
 const indx = getRandomArbitrary(1,movies.length-1); 
-console.log(indx);
 const mainMovie = movies[indx];
-console.log(mainMovie);
 const { original_title, overview,id } = mainMovie;
 
   return (
