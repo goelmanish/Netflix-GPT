@@ -24,5 +24,13 @@ export const MovieTrailer = async (movieId) => {
 let json = await data.json();
 //console.log(json.results);
 return json.results;
+  }
 
+export const getMovieDetail = async (movieName) => {
+  const data = await fetch('https://api.themoviedb.org/3/search/movie?query='+movieName+'&include_adult=false&language=en-US&page=1'
+, OPTIONS);
+
+let json = await data.json();
+//console.log(json.results);
+return json.results;
 }

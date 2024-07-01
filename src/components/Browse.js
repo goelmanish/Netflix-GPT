@@ -6,6 +6,8 @@ import { nowPlayingMovies } from '../utils/movieSlice'
 import MainContainer from './MainContainer'
 import SecondaryContainer from './SecondaryContainer'
 import GptSearch from './GptSearch'
+import MovieSearchResult from './MovieSearchResult'
+
 
 const Browse = () => {
   const dispatch = useDispatch();
@@ -26,8 +28,9 @@ const showGptSearch = useSelector(store=>store.gpt?.gptSearchState);
   return (
     <div>
       {showGptSearch ? (
-        <div className="w-full bg-red-400">
+        <div className="w-full">
         <GptSearch />
+        <MovieSearchResult />
         </div>
       ) : (
         <>

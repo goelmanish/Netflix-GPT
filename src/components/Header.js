@@ -9,6 +9,7 @@ import { setLanguage } from '../utils/appSlice';
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const handleSignOut = ()=>{
     signOut(auth).then(() => {
       // Sign-out successful.
@@ -43,6 +44,7 @@ const Header = () => {
           className="bg-blue-900 px-2 my-4 rounded-lg"
           onClick={handleGptClick}
         >
+          {}
           GPT Search
         </button>
         <button
